@@ -1,3 +1,3 @@
-import { count } from './count.model';
+import { user } from './user.model';
 
-export { count };
+export { user };
