@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import Gecko from '../assets/reading/gecko/Gecko.gif';
+import Ant from '../assets/reading/ants/Ant.gif';
 
 function Reading() {
   const location = useLocation();
@@ -9,10 +11,10 @@ function Reading() {
       {location.pathname.endsWith('reading') && (
         <>
           <Link to="/reading/gecko">
-            <button className="btn w-32 mx-3 my-10">Gecko</button>
+            <img src={Gecko} alt="gecko" className="border w-48 my-5 mx-auto" />
           </Link>
           <Link to="/reading/ant">
-            <button className="btn w-32 mx-3 my-10">Ant</button>
+            <img src={Ant} alt="ant" className="border w-48 my-5 mx-auto" />
           </Link>
         </>
       )}

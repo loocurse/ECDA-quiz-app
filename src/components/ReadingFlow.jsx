@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-function ReadingFlow({ pages, questions, cutOff}) {
+function ReadingFlow({ pages, questions, cutOff }) {
   const [currentPage, setCurrentPage] = useState(0);
 
   const navigate = useNavigate();
