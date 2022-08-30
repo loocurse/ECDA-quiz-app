@@ -1,12 +1,15 @@
 export const user = {
   state: {
     isLoggedIn: false,
+    userType: null,
+    username: null,
   }, // initial state
   reducers: {
     // handle state changes with pure functions
     login(state, payload) {
       return {
         ...state,
+        ...payload,
         isLoggedIn: true,
       };
     },

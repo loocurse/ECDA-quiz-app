@@ -8,7 +8,7 @@ import {
 import Landing from './pages/Landing';
 import Reading from './pages/Reading';
 import ReadingFlow from './components/ReadingFlow';
-import readingConfig from './reading.config';
+import readingConfig from './configs/reading.config';
 
 function App() {
   return (

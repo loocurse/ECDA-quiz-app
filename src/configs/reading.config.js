@@ -1,15 +1,15 @@
-import GeckoPage1 from './assets/nature/gecko/Gecko1.png';
-import GeckoPage2 from './assets/nature/gecko/Gecko2.png';
-import GeckoPage3 from './assets/nature/gecko/Gecko3.png';
-import GeckoPage4 from './assets/nature/gecko/Gecko4.png';
-import GeckoPage5 from './assets/nature/gecko/Gecko5.png';
-import GeckoPage6 from './assets/nature/gecko/Gecko6.png';
-import AntPage1 from './assets/nature/ants/Ants1.png';
-import AntPage2 from './assets/nature/ants/Ants2.png';
-import AntPage3 from './assets/nature/ants/Ants3.png';
-import AntPage4 from './assets/nature/ants/Ants4.png';
-import AntPage5 from './assets/nature/ants/Ants5.png';
-import AntPage6 from './assets/nature/ants/Ants6.png';
+import GeckoPage1 from '../assets/nature/gecko/Gecko1.png';
+import GeckoPage2 from '../assets/nature/gecko/Gecko2.png';
+import GeckoPage3 from '../assets/nature/gecko/Gecko3.png';
+import GeckoPage4 from '../assets/nature/gecko/Gecko4.png';
+import GeckoPage5 from '../assets/nature/gecko/Gecko5.png';
+import GeckoPage6 from '../assets/nature/gecko/Gecko6.png';
+import AntPage1 from '../assets/nature/ants/Ants1.png';
+import AntPage2 from '../assets/nature/ants/Ants2.png';
+import AntPage3 from '../assets/nature/ants/Ants3.png';
+import AntPage4 from '../assets/nature/ants/Ants4.png';
+import AntPage5 from '../assets/nature/ants/Ants5.png';
+import AntPage6 from '../assets/nature/ants/Ants6.png';
 
 export default {
   gecko: {
