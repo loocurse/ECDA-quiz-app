@@ -1,47 +1,32 @@
 import './App.css';
 import Login from './pages/Login';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Reading from './pages/Reading';
-import ReadingFlow from './components/ReadingFlow';
-import readingConfig from './configs/reading.config';
+import Evaluation from './pages/Evaluation';
+
+import LeftDrawer from './components/LeftDrawer';
+import Dashboard from './pages/Dashboard';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="max-w-[375px] mx-auto h-screen" >
-      <Router>
-        <Routes>
-          <Route path="login" element={<Login />} />
-          <Route path="reading" element={<Reading />}>
-            <Route
-              path="gecko"
-              element={
-                <ReadingFlow
-                  pages={readingConfig.gecko.pages}
-                  cutOff={readingConfig.gecko.cutOff}
-                  questions={readingConfig.gecko.questions}
-                />
-              }
-            />
-            <Route
-              path="ant"
-              element={
-                <ReadingFlow
-                  pages={readingConfig.ant.pages}
-                  cutOff={readingConfig.ant.cutOff}
-                  questions={readingConfig.ant.questions}
-                />
-              }
-            />
-          </Route>
-          <Route path="/" element={<Landing />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <div className="mx-auto">
+        <div className="drawer drawer-mobile">
+          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content">
+            <NavBar />
+            <Routes>
+              <Route path="login" element={<Login />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="evaluation" element={<Evaluation />} />
+              <Route path="/" element={<Landing />} />
+            </Routes>
+          </div>
+          <LeftDrawer />
+        </div>
+      </div>
+    </Router>
   );
 }
 

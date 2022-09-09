@@ -2,12 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-const menuItems = [
-  { name: 'Phonics', route: '/phonics' },
-  { name: 'Reading', route: '/reading' },
-  { name: 'Games', route: '/games' },
-  { name: 'Art', route: '/art' },
-];
+const menuItems = [{ name: 'Evaluation', route: '/evaluation' }];
 
 function Landing() {
   const navigate = useNavigate();
@@ -17,7 +12,7 @@ function Landing() {
       navigate('/login');
     }
   });
-  const name = useSelector(state => state.user.username)
+  const name = useSelector((state) => state.user.username);
   return (
     <div>
       <h1 className="text-2xl ml-2 mt-5">Welcome, {name}</h1>

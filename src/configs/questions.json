@@ -1,0 +1,53 @@
+[
+  {
+    "category": "Singing",
+    "questions": [
+      {
+        "question": "The child enjoys singing",
+        "response": 3
+      },
+      {
+        "question": "The child can recognise rhythms",
+        "response": 3
+      },
+      {
+        "question": "The child can sing along to songs",
+        "response": 3
+      }
+    ]
+  },
+  {
+    "category": "Writing",
+    "questions": [
+      {
+        "question": "The child can hold a pencil",
+        "response": 3
+      },
+      {
+        "question": "The child can write alphabets",
+        "response": 3
+      },
+      {
+        "question": "The child can draw",
+        "response": 3
+      }
+    ]
+  },
+  {
+    "category": "Character",
+    "questions": [
+      {
+        "question": "The child is nice",
+        "response": 3
+      },
+      {
+        "question": "The child doesn't hate people",
+        "response": 3
+      },
+      {
+        "question": "The child can love",
+        "response": 3
+      }
+    ]
+  }
+]
