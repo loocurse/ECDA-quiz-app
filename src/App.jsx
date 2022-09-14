@@ -1,12 +1,12 @@
 import './App.css';
 import Login from './pages/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Landing from './pages/Landing';
 import Evaluation from './pages/Evaluation';
-
 import LeftDrawer from './components/LeftDrawer';
 import Dashboard from './pages/Dashboard';
 import NavBar from './components/NavBar';
+import Home from './pages/Home';
+import Report from './pages/Report';
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="evaluation" element={<Evaluation />} />
-              <Route path="/" element={<Landing />} />
+              <Route path="report" element={<Report />} />
+              <Route path="/" element={<Home />} />
             </Routes>
           </div>
           <LeftDrawer />

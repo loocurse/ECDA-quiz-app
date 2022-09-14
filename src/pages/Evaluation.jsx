@@ -14,6 +14,13 @@ function Evaluation() {
       state.evaluation.currentPage === state.evaluation.questions.length - 1,
   );
 
+  const submitNextHandler = () => {
+    dispatch.evaluation.incrementPage()
+    if (isLastPage) {
+      dispatch.evaluation.reset()
+    }
+  }
+
   if (!student) {
     return (
       <div className="h-full flex flex-col justify-center">
@@ -59,7 +66,9 @@ function Evaluation() {
         <ul className="steps mx-auto w-1/2">
           {sections.map((sec, index) => (
             <li
-              className={`step cursor-pointer ${index <= currentPage ? 'step-primary' : ''}`}
+              className={`step cursor-pointer ${
+                index <= currentPage ? 'step-primary' : ''
+              }`}
               onClick={() => dispatch.evaluation.set({ currentPage: index })}
               key={index}
             >
@@ -72,7 +81,7 @@ function Evaluation() {
       <div className="flex items-center justify-center">
         <button
           className="btn bg-accent hover:bg-accent-focus border-0"
-          onClick={() => dispatch.evaluation.incrementPage()}
+          onClick={submitNextHandler}
         >
           {isLastPage ? 'Submit' : 'Next'}
         </button>

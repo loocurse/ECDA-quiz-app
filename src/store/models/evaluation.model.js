@@ -4,7 +4,6 @@ export const evaluation = {
   state: {
     student: null,
     questions,
-    responses: [],
     currentPage: 0,
   }, // initial state
   reducers: {
@@ -23,8 +22,15 @@ export const evaluation = {
         student: payload,
       };
     },
+    reset(state, payload) {
+      return {
+        student: null,
+        questions: questions,
+        currentPage: 0,
+      }
+    },
     incrementPage(state) {
-      if (state.currentPage < state.questions.length) {
+      if (state.currentPage < state.questions.length - 1) {
         return {
           ...state,
           currentPage: state.currentPage + 1,

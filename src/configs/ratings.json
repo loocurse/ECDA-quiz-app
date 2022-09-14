@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Names all the letters of the alphabets",
+    "nursery1": 1,
+    "nursery2": 2,
+    "kindeg1": 5
+  },
+  {
+    "name": "Identifies graphemes",
+    "nursery1": 2,
+    "nursery2": 3,
+    "kindeg1": 4
+  },
+  {
+    "name": "Reads decodable words",
+    "nursery1": 2,
+    "nursery2": 2,
+    "kindeg1": 5
+  },
+  {
+    "name": "Read simple words",
+    "nursery1": 1,
+    "nursery2": 3,
+    "kindeg1": 5
+  },
+  {
+    "name": "Reads fluently'",
+    "nursery1": 1,
+    "nursery2": 3,
+    "kindeg1": 4
+  },
+  {
+    "name": "'Spells decodable words",
+    "nursery1": 1,
+    "nursery2": 3,
+    "kindeg1": 4
+  },
+  {
+    "name": "Spells sight words",
+    "nursery1": 2,
+    "nursery2": 4,
+    "kindeg1": 4
+  }
+]
