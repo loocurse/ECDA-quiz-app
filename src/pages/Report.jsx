@@ -8,7 +8,7 @@ import RatingsTable from '../components/report/RatingsTable';
 function Report() {
   return (
     <div className='mx-9'>
-      <div className="flex flex-row m-9">
+      <div className="flex flex-row m-9 justify-center">
         <img src={childPhoto} alt="" className="w-48" />
         <div className="ml-3">
           <p className="font-bold text-xl">MaryAnn d/o Verasamy </p>

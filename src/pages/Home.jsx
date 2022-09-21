@@ -8,21 +8,28 @@ const eventItems = [
   {
     name: "Teacher's day celebration",
     time: '3 days time',
-    POC: 'Mr Monroe',
+    POC: 'Mr Samuel Tan',
     position: 'HOD (Math)',
     location: '02-10',
   },
   {
-    name: "Team huddle",
+    name: 'Team huddle',
     time: '3 days time',
-    POC: 'Mr Lim',
+    POC: 'Mrs Linda Tan',
     position: 'HOD (English)',
     location: 'Integrity Room',
   },
   {
-    name: "Story telling workshop",
+    name: 'Birthday',
+    time: '3 days time',
+    POC: 'Ashley Lim',
+    position: 'Kindergarten 1A',
+    location: '02-20',
+  },
+  {
+    name: 'Story telling workshop',
     time: '1 week time',
-    POC: 'Mr Hardson',
+    POC: 'Mdm Wong Tat Na',
     position: 'External Trainer',
     location: '01-10',
   },
@@ -38,8 +45,8 @@ function Home() {
   });
   const name = useSelector((state) => state.user.username);
   return (
-    <div className="text-center">
-      <h1 className="text-2xl ml-2 mt-5">Welcome, {name}</h1>
+    <div className="text-center w-4/5 mx-auto">
+      <h1 className="text-2xl ml-2 my-5">Welcome, {name}</h1>
       {/* <div className=" bg-center bg-[url('/landing-image.webp')] w-3/4 h-80 mx-auto hero-overlay"></div> */}
       <div className="stats shadow mx-auto">
         <div className="stat">
@@ -58,9 +65,9 @@ function Home() {
               ></path> */}
             </svg>
           </div>
-          <div className="stat-title">Aggregated score</div>
-          <div className="stat-value text-primary">76.2</div>
-          <div className="stat-desc">21% more than last month</div>
+          <div className="stat-title">Evaluation Progress</div>
+          <div className="stat-value text-primary">76.2%</div>
+          <div className="stat-desc">children have completed their evaluation</div>
         </div>
 
         <div className="stat">
@@ -79,9 +86,9 @@ function Home() {
               ></path>
             </svg> */}
           </div>
-          <div className="stat-title">Absentees</div>
-          <div className="stat-value text-secondary">7</div>
-          <div className="stat-desc">12% more than last month</div>
+          <div className="stat-title">Attention</div>
+          <div className="stat-value text-red-600">4</div>
+          <div className="stat-desc">children who failed the last evaluation</div>
         </div>
 
         <div className="stat">

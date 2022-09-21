@@ -12,7 +12,7 @@ import ratings from '../../configs/ratings.json'
 
 function Graph() {
   return (
-    <BarChart width={900} height={250} data={ratings}>
+    <BarChart width={900} height={250} data={ratings} className="mx-auto">
       <CartesianGrid strokeDasharray="1 1" />
       <XAxis dataKey="name" />
       <YAxis />

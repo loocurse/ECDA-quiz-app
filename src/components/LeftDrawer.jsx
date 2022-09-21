@@ -18,7 +18,7 @@ function LeftDrawer() {
       <ul className="menu p-4 overflow-y-auto w-80 bg-primary text-base-content">
         <h2 className="text-white font-bold text-xl mb-5">Teacher's Portal</h2>
         {routes.map((route) => (
-          <li>
+          <li key={route.name}>
             <Link className="text-white" to={route.link}>
               <img src={route.icon} alt="" className="w-6" />
               {route.name}

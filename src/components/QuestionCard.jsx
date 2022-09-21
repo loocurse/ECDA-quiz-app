@@ -1,34 +1,31 @@
-import React from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { dispatch } from '../store';
 
-function QuestionCard({ question, index }) {
-  const response = useSelector(state => state.evaluation.questions[state.evaluation.currentPage].questions[index].response)
+function QuestionCard({ question, subdomain }) {
   return (
-    <div className="p-5 rounded w-1/2 mx-auto border m-5">
-      <p className="font-bold">{question}</p>
-      <div className="w-96 mx-auto mt-9">
-        <input
-          type="range"
-          min="1"
-          max="5"
-          className="range range-primary"
-          step="1"
-          value={response}
+    <div className=" w-2/3 mx-auto m-5 flex flex-row justify-between">
+      <p className="max-w-md">{question}</p>
+      <div className="w-48 ml-auto p-0">
+        <select
+          className="select w-full max-w-xs"
           onChange={(e) =>
             dispatch.evaluation.setResponse({
-              qnIndex: index,
-              response: e.target.value,
+              qn: question,
+              subdomain,
+              resp: e.target.value,
             })
           }
-        />
-        <div className="w-full flex justify-between text-xs px-2">
-          <span>Strongly Disagree</span>
-          <span>Strongly Agree</span>
-        </div>
+        >
+          <option selected>Not Assessed</option>
+          <option>Not Yet</option>
+          <option>Not Proficient</option>
+          <option>Average</option>
+          <option>Very Good</option>
+        </select>
       </div>
     </div>
   );
 }
 
-export default QuestionCard
+export default QuestionCard;
