@@ -8,7 +8,7 @@ const routes = [
   { name: 'Home', link: '/', icon: home },
   { name: 'Evaluation', link: '/evaluation', icon: evaluationIcon },
   { name: 'Dashboard', link: '/dashboard', icon: dashboard },
-  { name: 'Report', link: '/report', icon: evaluationIcon },
+  { name: "Child's Individual Report", link: '/report', icon: evaluationIcon },
 ];
 
 function LeftDrawer() {
