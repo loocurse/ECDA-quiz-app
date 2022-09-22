@@ -3,6 +3,12 @@ import { useSelector } from 'react-redux';
 import { dispatch } from '../store';
 
 function QuestionCard({ question, subdomain }) {
+  // to make my life easier (DELETE LATER)
+  // dispatch.evaluation.setResponse({
+  //   qn: question,
+  //   subdomain,
+  //   resp: "Not Yet",
+  // })
   return (
     <div className=" w-2/3 mx-auto m-5 flex flex-row justify-between">
       <p className="max-w-md">{question}</p>
@@ -17,11 +23,17 @@ function QuestionCard({ question, subdomain }) {
             })
           }
         >
+          
+          {/*
+            QUICK FIX TO MAKE MY LIFE EASIER!!
+            TODO: REVERT THIS BEFORE RELEASE
           <option selected>Not Assessed</option>
-          <option>Not Yet</option>
-          <option>Not Proficient</option>
-          <option>Average</option>
-          <option>Very Good</option>
+          <option>Not Yet</option> */}
+          <option value={0}>Not Assessed</option>
+          <option value={1} selected>Not Yet</option>
+          <option value={2}>Not Proficient</option>
+          <option value={3}>Average</option>
+          <option value={4}>Very Good</option>
         </select>
       </div>
     </div>

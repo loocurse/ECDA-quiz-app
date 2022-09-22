@@ -2,17 +2,45 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import EvaluationQuestions from '../components/EvaluationQuestions';
 import { dispatch } from '../store';
+// import update from '../csv-related/functions3';
 
 function Evaluation() {
+  const responses = useSelector((state) => state.evaluation.questions);
   const student = useSelector((state) => state.evaluation.student);
+  const yeet = useSelector((state) => state.evaluation);
   const domains = useSelector((state) => state.evaluation.domains);
   const currentPage = useSelector((state) => state.evaluation.currentPage);
   // const isLastPage = useSelector(
   //   (state) =>
   //     state.evaluation.currentPage === state.evaluation.questions.length - 1,
   // );
+  const isLastPage = true;
 
   const submitNextHandler = () => {
+    console.log("Changing page");
+    console.log(currentPage)
+    console.log(domains)
+    console.log(yeet.selectedDomain);
+    console.log(responses);
+    console.log("REPONSES")
+    var packet = {
+      year: 2022,
+      term: 1,
+      class: 'K2',
+      student: {
+        name: student,
+        id: "S0001",
+        dob: '15-Jun-16'
+      },
+      teacher: {
+        id: 'T001',
+        name: "MRS LINDA TAN"
+      },
+      category: yeet.selectedDomain
+    }
+    packet = {...packet, response: {...responses}}
+
+    console.log(JSON.stringify(packet));  
     dispatch.evaluation.incrementPage();
     if (isLastPage) {
       dispatch.evaluation.reset();
