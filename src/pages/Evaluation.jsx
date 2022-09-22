@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import EvaluationQuestions from '../components/EvaluationQuestions';
 import { dispatch } from '../store';
 // import update from '../csv-related/functions3';
-import { insert } from '../db/utils';
+import { readAll } from '../db/utils2';
 
 function Evaluation() {
   const responses = useSelector((state) => state.evaluation.questions);
@@ -94,7 +94,10 @@ function Evaluation() {
         </div>
         <button
           className="btn border-0 bg-accent hover:bg-accent-focus w-48 mt-5 mx-auto"
-          onClick={() => dispatch.evaluation.set({ student: 'Rachel Lee' })}
+          onClick={() => {
+            readAll();
+            dispatch.evaluation.set({ student: 'Rachel Lee' })}
+          }
         >
           Evaluate
         </button>

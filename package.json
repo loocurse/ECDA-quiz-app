@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "@rematch/core": "^2.2.0",
-    "aws-sdk": "^2.1221.0",
     "axios": "^0.27.2",
     "csv": "^6.2.0",
     "daisyui": "^2.22.0",
+    "dotenv": "^16.0.2",
     "lodash": "^4.17.21",
-    "mock-aws-s3": "^4.0.2",
-    "nock": "^13.2.9",
     "react": "^18.2.0",
     "react-daisyui": "^2.2.0",
     "react-dom": "^18.2.0",
@@ -26,6 +24,7 @@
     "react-toastify": "^9.0.8",
     "recharts": "^2.1.14",
     "redux": "^4.2.0",
+    "sql.js": "^1.8.0",
     "sqlite3": "^5.1.1"
   },
   "devDependencies": {

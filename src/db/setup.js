@@ -1,6 +1,11 @@
+/*
+    THESE ARE DONE USING BACKEND LIBS CANNOT BE USED IN FRONTEND
+*/
+
 import sqlite3 from "sqlite3";
 
-const DATABASE_FILE = "./src/db/Database.db"
+// const DATABASE_FILE = "./src/db/Database.db"
+const DATABASE_FILE = "./src/db/test.sqlite"
 
 // EXAMPLE taken from the app
 // const response = {
@@ -39,7 +44,7 @@ export function connect() {
     return db;
 }
 
-function createFile() {
+export function createFile() {
     const db = new sqlite3.Database(DATABASE_FILE, sqlite3.OPEN_READWRITE, (err) => {
         if (err) console.error(err.message);
         console.log("Connected to db")

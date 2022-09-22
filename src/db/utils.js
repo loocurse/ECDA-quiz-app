@@ -1,3 +1,7 @@
+/*
+    THESE ARE DONE USING BACKEND LIBS CANNOT BE USED IN FRONTEND
+*/
+
 import sqlite3 from "sqlite3";
 import { connect, close } from "./setup.js";
 
