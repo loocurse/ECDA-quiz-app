@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import EvaluationQuestions from '../components/EvaluationQuestions';
 import { dispatch } from '../store';
 // import update from '../csv-related/functions3';
+import { insert } from '../db/utils';
 
 function Evaluation() {
   const responses = useSelector((state) => state.evaluation.questions);
@@ -17,12 +18,12 @@ function Evaluation() {
   const isLastPage = true;
 
   const submitNextHandler = () => {
-    console.log("Changing page");
-    console.log(currentPage)
-    console.log(domains)
-    console.log(yeet.selectedDomain);
-    console.log(responses);
-    console.log("REPONSES")
+    // console.log("Changing page");
+    // console.log(currentPage)
+    // console.log(domains)
+    // console.log(yeet.selectedDomain);
+    // console.log(responses);
+    // console.log("REPONSES")
     var packet = {
       year: 2022,
       term: 1,
@@ -41,6 +42,7 @@ function Evaluation() {
     packet = {...packet, response: {...responses}}
 
     console.log(JSON.stringify(packet));  
+    insert(packet);
     dispatch.evaluation.incrementPage();
     if (isLastPage) {
       dispatch.evaluation.reset();
