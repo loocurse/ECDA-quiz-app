@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { dispatch } from '../store';
+import { dispatch } from '../../store';
 import QuestionCard from './QuestionCard';
 
 function EvaluationQuestions() {

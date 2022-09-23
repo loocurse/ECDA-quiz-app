@@ -1,5 +1,5 @@
 import React from 'react';
-import { dispatch } from '../store';
+import { dispatch } from '../../store';
 
 function QuestionCard({ question, subdomain, questionType = 'dropdown' }) {
   if (questionType === 'dropdown') {
