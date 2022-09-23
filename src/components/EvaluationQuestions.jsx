@@ -35,6 +35,7 @@ function EvaluationQuestions() {
               key={`${qn.question}${index}`}
               subdomain={subDomain}
               response={1}
+              prevVal={qn.prevVal}
             />
           ))}
         </div>

@@ -5,19 +5,74 @@ import { dispatch } from '../store';
 // import update from '../csv-related/functions3';
 import { readAll } from '../db/utils2';
 
+
+
 function Evaluation() {
   const responses = useSelector((state) => state.evaluation.questions);
+  const prevExists = useSelector((state) => state.evaluation.prevExists)
   const student = useSelector((state) => state.evaluation.student);
   const yeet = useSelector((state) => state.evaluation);
   const domains = useSelector((state) => state.evaluation.domains);
   const currentPage = useSelector((state) => state.evaluation.currentPage);
   // const isLastPage = useSelector(
-  //   (state) =>
-  //     state.evaluation.currentPage === state.evaluation.questions.length - 1,
-  // );
-  const isLastPage = true;
+    //   (state) =>
+    //     state.evaluation.currentPage === state.evaluation.questions.length - 1,
+    // );
+    const isLastPage = true;
+    
+    async function getPrevVals() {
+      const res = await fetch("http://localhost:3000/findEntries/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          year: 2022,
+          term: 4,
+          teacher_id: 'T001',
+          student_id: 'S0001',
+          category: yeet.selectedDomain
+        })
+      })
+      const finalJson = await res.json();
+      console.log(finalJson);
+      console.log("Checked if it is empty!")
+      if (Object.keys(finalJson).length===0) {
+        // object is empty
+        dispatch.evaluation.setPrevResponse({
+          result: false
+        })
+      } else {
+        dispatch.evaluation.setPrevResponse({
+          result: true
+        })
+      }
+    }
 
-  const submitNextHandler = () => {
+    async function sendInsert(body) {
+      const res = await fetch("http://localhost:3000/simpleInsert/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      console.log(await res.text());
+    }
+
+    async function update(body) {
+      const res = await fetch("http://localhost:3000/updateEntries/", {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      console.log("UPDATED ENTIRED!!")
+      console.log(await res.text());
+    }
+
+    const submitNextHandler = () => {
     // console.log("Changing page");
     // console.log(currentPage)
     // console.log(domains)
@@ -26,7 +81,7 @@ function Evaluation() {
     // console.log("REPONSES")
     var packet = {
       year: 2022,
-      term: 1,
+      term: 4,
       class: 'K2',
       student: {
         name: student,
@@ -40,9 +95,13 @@ function Evaluation() {
       category: yeet.selectedDomain
     }
     packet = {...packet, response: {...responses}}
+    if (prevExists) {
+      update(packet);
+    } else {
+      sendInsert(packet);
+    }
 
-    console.log(JSON.stringify(packet));  
-    insert(packet);
+    // console.log(JSON.stringify(packet));  
     dispatch.evaluation.incrementPage();
     if (isLastPage) {
       dispatch.evaluation.reset();
@@ -94,8 +153,9 @@ function Evaluation() {
         </div>
         <button
           className="btn border-0 bg-accent hover:bg-accent-focus w-48 mt-5 mx-auto"
-          onClick={() => {
-            readAll();
+          onClick={async () => {
+            // readAll();
+            await getPrevVals();
             dispatch.evaluation.set({ student: 'Rachel Lee' })}
           }
         >

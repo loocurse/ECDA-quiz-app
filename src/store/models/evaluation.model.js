@@ -7,8 +7,18 @@ export const evaluation = {
     selectedDomain: null,
     domains: Object.keys(questionsBank),
     currentPage: 0,
+    prevExists: false,
   }, // initial state
   reducers: {
+    setPrevResponse(state, payload) {
+      console.log("CHecking prewkjefdnjkq")
+      console.log(payload);
+      console.log(payload.result);
+      return {
+        ...state,
+        prevExists: payload.result
+      };
+    },
     // handle state changes with pure functions
     setResponse(state, payload) {
       const currResponse = {...state.questions};
@@ -28,7 +38,7 @@ export const evaluation = {
         } else if (item.response == null) {
           return {
             ...item,
-            response: "Not Assessed"
+            response: 0 // default value
           };
         }
         return item;

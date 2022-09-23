@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { dispatch } from '../store';
 
-function QuestionCard({ question, subdomain }) {
+function QuestionCard({ question, subdomain, prevVal}) {
   // to make my life easier (DELETE LATER)
   // dispatch.evaluation.setResponse({
   //   qn: question,
