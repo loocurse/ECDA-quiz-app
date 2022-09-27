@@ -7,23 +7,44 @@ export const evaluation = {
     selectedDomain: null,
     domains: Object.keys(questionsBank),
     currentPage: 0,
+    prevExists: false,
   }, // initial state
   reducers: {
+    setPrevResponse(state, payload) {
+      console.log("CHecking prewkjefdnjkq")
+      console.log(payload);
+      console.log(payload.result);
+      return {
+        ...state,
+        prevExists: payload.result
+      };
+    },
     // handle state changes with pure functions
     setResponse(state, payload) {
       const currResponse = {...state.questions};
+      // console.log("Current qns");
+      // console.log(currResponse[payload.subdomain]);
       currResponse[payload.subdomain] = currResponse[payload.subdomain].map((item) => {
-        if (item.qn === payload.qn) {
-          console.log(item)
-          console.log(payload)
+        // console.log('QUESTION CHECK!')
+        // console.log(item.qn, ' ', payload.qn);
+        if (item.question === payload.qn) {
+          // console.log("Checking item out")
+          // console.log(item)
+          // console.log(payload)
           return {
             ...item,
             response: payload.resp,
+          };
+        } else if (item.response == null) {
+          return {
+            ...item,
+            response: 0 // default value
           };
         }
         return item;
       });
       console.log(currResponse)
+      // console.log("HEREREEEE");
       return {
         ...state,
         questions: currResponse,
