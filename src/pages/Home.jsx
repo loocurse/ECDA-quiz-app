@@ -91,11 +91,11 @@ function Home() {
           <div className="stat-desc">children who failed the last evaluation</div>
         </div>
 
-        <div className="stat">
+        {/* <div className="stat">
           <div className="stat-title">Absentees</div>
           <div className="stat-value text-secondary">7</div>
           <div className="stat-desc">12% more than last month</div>
-        </div>
+        </div> */}
       </div>
 
       <div className="overflow-x-auto">
@@ -106,7 +106,6 @@ function Home() {
               <th>Date / Time</th>
               <th>POC</th>
               <th>Location</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -122,7 +121,6 @@ function Home() {
                   </span>
                 </td>
                 <td>{event.location}</td>
-                <td><button className='btn btn-accent '>RSVP</button></td>
               </tr>
             ))}
           </tbody>

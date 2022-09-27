@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import EvaluationQuestions from '../components/EvaluationQuestions';
+import EvaluationQuestions from '../components/evaluation/EvaluationQuestions';
+import StudentSelection from '../components/StudentSelection';
 import { dispatch } from '../store';
 // import update from '../csv-related/functions3';
 import { readAll } from '../db/utils2';
@@ -19,7 +20,7 @@ function Evaluation() {
     //     state.evaluation.currentPage === state.evaluation.questions.length - 1,
     // );
     const isLastPage = true;
-    
+
     async function getPrevVals() {
       const res = await fetch("http://localhost:3000/findEntries/", {
         method: 'POST',
@@ -101,7 +102,7 @@ function Evaluation() {
       sendInsert(packet);
     }
 
-    // console.log(JSON.stringify(packet));  
+    // console.log(JSON.stringify(packet));
     dispatch.evaluation.incrementPage();
     if (isLastPage) {
       dispatch.evaluation.reset();
@@ -163,25 +164,11 @@ function Evaluation() {
         </button>
       </div>
     );
+    return <StudentSelection type={'evaluation'} />;
   }
 
   return (
     <div>
-      {/* <div className="flex mt-5">
-        <ul className="steps mx-auto w-1/2">
-          {sections.map((sec, index) => (
-            <li
-              className={`step cursor-pointer ${
-                index <= currentPage ? 'step-primary' : ''
-              }`}
-              onClick={() => dispatch.evaluation.set({ currentPage: index })}
-              key={index}
-            >
-              {sec}
-            </li>
-          ))}
-        </ul>
-      </div> */}
       <EvaluationQuestions />
       <div className="flex items-center justify-center">
         <button

@@ -16,7 +16,7 @@ function NavBar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost font-bold normal-case text-xl">Evaluation</a>
+        <a className="btn btn-ghost font-bold normal-case text-xl">SHINE A-PRAISE</a>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">

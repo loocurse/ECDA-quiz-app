@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { dispatch } from '../store';
+import { dispatch } from '../../store';
 import QuestionCard from './QuestionCard';
 
 function EvaluationQuestions() {
@@ -36,6 +36,7 @@ function EvaluationQuestions() {
               subdomain={subDomain}
               response={1}
               prevVal={qn.prevVal}
+              questionType={qn.type}
             />
           ))}
         </div>
